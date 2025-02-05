@@ -34,6 +34,7 @@ setup_php81() {
         php81-pcntl \
         php81-pdo \
         php81-pdo_sqlite \
+        php81-pdo_mysql \
         php81-phar \
         php81-posix \
         php81-session \
