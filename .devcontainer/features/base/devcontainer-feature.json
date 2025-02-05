@@ -1,0 +1,17 @@
+{
+    "id": "base",
+    "name": "WP Codespaces Base",
+    "version": "1.1.0",
+    "description": "Base feature for WP Codespaces",
+    "containerEnv": {
+        "PAGER": "\"/usr/bin/less -R\""
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "emilast.LogFileHighlighter",
+                "berublan.vscode-log-viewer"
+            ]
+        }
+    }
+}

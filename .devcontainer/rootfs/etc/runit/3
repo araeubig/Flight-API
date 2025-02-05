@@ -1,0 +1,9 @@
+#!/bin/sh
+
+exec 2>&1
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+echo 'Waiting for services to stop...'
+sv -w196 force-stop /etc/service/* || true
+sv exit /service/* || true

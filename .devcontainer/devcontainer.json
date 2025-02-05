@@ -1,0 +1,272 @@
+{
+    "name": "WordPress Development Environment",
+    "build": {
+        "dockerfile": "./Dockerfile",
+        "context": "."
+    },
+    // "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
+    "overrideCommand": false,
+    "forwardPorts": [80, 81, 8025],
+    "portsAttributes": {
+        "80": {
+            "label": "Application",
+            "onAutoForward": "notify",
+            "elevateIfNeeded": true
+        },
+        "81": {
+            "label": "phpMyAdmin",
+            "onAutoForward": "notify",
+            "elevateIfNeeded": true
+        },
+        "8025": {
+            "label": "MailHog",
+            "onAutoForward": "notify"
+        },
+        "1025": {
+            "label": "MailHog SMTP",
+            "onAutoForward": "ignore"
+        },
+        "3306": {
+            "label": "MySQL",
+            "onAutoForward": "ignore"
+        },
+        "9000": {
+            "label": "php-fpm",
+            "onAutoForward": "ignore"
+        },
+        "9003": {
+            "label": "XDebug Client Port",
+            "onAutoForward": "notify"
+        }
+    },
+    "features": {
+        // *************************
+        // *** Required features ***
+        // *************************
+        "./features/base": {},
+        "./features/nginx": {
+            // Set to the URL of a site where requests for missing media files can be redirected.
+            // Example: "mediaRedirectURL": "https://example.com"
+            "mediaRedirectURL": ""
+        },
+        "./features/php": {
+            // PHP version options: 8.1, 8.2, 8.3
+            "version": "8.1",
+            // PHP image library options: imagick, gmagick
+            "imagelibrary": "imagick",
+            "composer": true
+        },
+        "./features/mariadb": {
+            // Set to false to prevent the database content from persisting between rebuilds.
+            "installDatabaseToWorkspaces": true
+        },
+        // "./features/wordpress": {
+        //      // WordPress version: Accepts 'latest', 'nightly', or a version number.
+        //     "version": "latest",
+        //     // Set to false to prevent wp-content/uploads content from persisting between rebuilds.
+        //     "moveUploadsToWorkspaces": true,
+        //     // Set to true to create the environment as a WordPress multisite.
+        //     "multisite": false,
+        //     // GitHub Codespaces only supports the subdirectory network type for multisite; subdomain cannot be used.
+        //     "multisiteStyle": "subdirectory",
+        //     "installLanguages": false,
+        //     "installPlugins": true,
+        //     "environment": "plugin",
+        //     "themeTest": true
+        // },
+        // "./features/wp-cli": {
+        //     // Set to true to enable nightly builds of WP-CLI.
+        //     "nightly": false
+        // },
+        // "./features/vip-go-mu-plugins": {
+        //     // Set to false to disable VIP MU plugins (not recommended).
+        //     "enabled": false,
+        //     // Which branch of VIP MU plugins to load. Accepts 'staging', 'production', or 'develop'.
+        //     "retainGit": false,
+        //     // Set to true to load all files necessary for the development of VIP MU plugins.
+        //     "development_mode": false
+        // },
+        // "./features/dev-tools": {},
+        // *************************
+        // *** Optional features ***
+        // *************************
+        // "./features/memcached": {
+        //     // Set to false to disable memcached and the object cache (this is not recommended).
+        //     "enabled": false
+        // },
+        // Photon
+        // "./features/photon": {
+        //     // Set to false if you don't need Photon
+        //     "enabled": false,
+        //     // Set to false to enable image optimizations. This may slow down requests.
+        //     "disable_optimizations": true,
+        //     // Process images only if they have a query string in their URLs
+        //     // When set to true:
+        //     // * https://mysite.com/wp-content/uploads/image.jpg will not be processed
+        //     // * https://mysite.com/wp-content/uploads/image.jpg?w=100 will be processed
+        //     // When set to false, both images will be processed by Photon.
+        //     "only_images_with_qs": true
+        // },
+        // Elasticsearch
+        // "./features/elasticsearch": {
+        //     // Set to true to enable Elasticsearch.
+        //     // This feature requires the local machine to have at least 8 GB RAM.
+        //     "enabled": false,
+        //     // Set to false to prevent Elasticsearch data from persisting between rebuilds.
+        //     "installDataToWorkspaces": true
+        // },
+        // Cron
+        // "./features/cron": {
+        //     // Set to true to enable cron.
+        //     "enabled": false,
+        //     // If system cron is enabled, additional settings are available.
+        //     // Set to false to cancel the creation of a system cron task that runs WordPress cron.
+        //     "run_wp_cron": true,
+        //     // WordPress cron schedule. Refer to https://crontab.guru/ for cron schedule expressions.
+        //     "wp_cron_schedule": "*/15 * * * *"
+        // },
+        // Tools
+        // "./features/mailpit": {
+        //     // Set to false to disable Mailpit.
+        //     "enabled": false
+        // },
+        "./features/phpmyadmin": {
+            // Set to false to disable phpMyAdmin.
+            "enabled": true
+        },
+        // Debugging
+        "./features/xdebug": {
+            // Set to true to enable Xdebug.
+            // This setting can also be updated with CLI commands in the terminal.
+            "enabled": false,
+            // Set Xdebug mode. Accepted value options are listed here: https://xdebug.org/docs/all_settings#mode
+            "mode": "debug"
+        },
+        // Misc
+        "./features/mc": {
+            // Set to true to enable Midnight Commander.
+            "enabled": true
+        },
+        // "./features/ssh": {
+        //     // Set to true to enable an SSH server for the Codespaces environment.
+        //     "enabled": false
+        // }
+    },
+    // *****************************
+    // *** Environment variables ***
+    // *****************************
+    "containerEnv": {
+        //  "MY_VAR": "example",
+        //  "MY_OTHER_VAR": "another example"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "amodio.toggle-excluded-files",
+                "dlech.chmod",
+                "timonwong.shellcheck",
+                "alefragnani.bookmarks",
+                "wayou.vscode-todo-highlight",
+                "dbaeumer.vscode-eslint",
+                "GitHub.copilot",
+                "esbenp.prettier-vscode",
+                "ms-azuretools.vscode-docker",
+                "uctakeoff.vscode-counter",
+                "rangav.vscode-thunder-client"
+            ],
+            "settings": {
+                // "files.exclude": {
+                //     ".devcontainer/": true,
+                //     "vendor/": true,
+                //     "client-config/": true,
+                //     ".gitignore": true,
+                //     "composer.json": true,
+                //     "composer.lock": true,
+                //     "phpcs.xml": true,
+                //     "README.md": true,
+                //     "digital-picture-frame/includes/libraries/": true
+                // },
+                "logViewer.watch": [
+                    {
+                        "title": "NGINX Error",
+                        "pattern": "/var/log/nginx/error.log"
+                    },
+                    // {
+                    //     "title": "WordPress",
+                    //     "pattern": "/wp/logs/debug.log"
+                    // }
+                ],
+                "files.eol": "\n",
+                "VSCodeCounter.maxOpenFiles": 100,
+                "VSCodeCounter.languages": {
+                    "php": {
+                        "extensions": [
+                            ".php"
+                        ],
+                        "lineComment": [
+                            "//"
+                        ],
+                        "blockComment": [
+                            "/**",
+                            " *",
+                            " */"
+                        ]
+                    },
+                    "javascript": {
+                        "extensions": [
+                            ".js"
+                        ],
+                        "lineComment": [
+                            "//"
+                        ],
+                        "blockComment": []
+                    },
+                    "css": {
+                        "extensions": [
+                            ".css"
+                        ],
+                        "lineComment": [
+                            "//"
+                        ],
+                        "blockComment": []
+                    },
+                    "html": {
+                        "extensions": [
+                            ".html"
+                        ],
+                        "lineComment": [
+                            "//"
+                        ],
+                        "blockComment": [
+                            "<!--",
+                            "-->"
+                        ]
+                    },
+                    "gettext": {
+                        "extensions": [
+                            "po"
+                        ],
+                        "lineComment": [
+                            "#"
+                        ],
+                        "blockComment": []
+                    }
+                },
+                "VSCodeCounter.outputAsCSV": false,
+                "VSCodeCounter.outputAsText": false,
+                "VSCodeCounter.outputDirectory": ".codecount",
+                "VSCodeCounter.history": 1,
+                "VSCodeCounter.useFilesExclude": true,
+                "VSCodeCounter.countDirectLevelFiles": false
+                // "VSCodeCounter.useGitIgnore": true
+                // "VSCodeCounter.exclude": [
+                //     "./digital-picture-frame/**",
+                //     "**/.vscode/**",
+                //     "**/node_modules/**",
+                //     "./devcontainer"
+                // ]
+            }
+        }
+    },
+    "remoteUser": "vscode"
+}

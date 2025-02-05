@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+install -m 0000 /dev/null /run/runit.stopit
