@@ -1,13 +1,16 @@
 {
-    "name": "automattic/vip-go-skeleton",
-    "description": "Used for setting up development dependencies across the whole repository.",
-    "homepage": "https://github.com/automattic/vip-go-skeleton",
-    "license": "GPL-2.0-or-later",
-    "require-dev": {
-      "flightphp/core": "^1.0"
-    },
-    "config": {
-      "allow-plugins": {
-      }
-    }
+  "autoload": {
+      "psr-4": {
+          "App\\": "app/"
+      },
+      "files": [
+          "app/Helpers/functions.php"
+      ]
+  },
+  "require": {
+      "flightphp/core": "^3.11",
+      "geekgroveofficial/php-smart-validator": "^1.0",
+      "vlucas/phpdotenv": "^5.6",
+      "robmorgan/phinx": "^0.16.6"
+  }
 }
