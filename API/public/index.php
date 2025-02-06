@@ -1,6 +1,9 @@
 <?php
 require '../vendor/autoload.php';
-require '../routes/api.php';
+//require '../routes/api.php';
 
-// Starting framework
+Flight::route('/', function(){
+    echo 'Hello, world!';
+});
+
 Flight::start();
