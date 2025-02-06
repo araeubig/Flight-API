@@ -1,13 +1,8 @@
-# Dependencies
-## Avoid any node_modules folders anywhere in the repo; see see https://docs.wpvip.com/how-tos/manage-dependencies/#version-management
-node_modules
-.codecount
 ## Avoid package*.json and *.lock files only at repo root
-/package.json
-/package-lock.json
-/composer.lock
+package-lock.json
+composer.lock
 
-# Ignore temporary OS files
+## Ignore temporary OS files
 .DS_Store
 .DS_Store?
 .Spotlight-V100
@@ -15,5 +10,9 @@ node_modules
 ehthumbs.db
 Thumbs.db
 
-# Composer (repo root only)
-# /vendor/
+## Ignore app specific files
+vendor/
+logs/*
+tests/build/
+.phpunit.result.cache
+!.htaccess
