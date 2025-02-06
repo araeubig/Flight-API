@@ -6,7 +6,7 @@
     },
     // "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
     "overrideCommand": false,
-    "forwardPorts": [80, 81, 8025],
+    "forwardPorts": [80, 81],
     "portsAttributes": {
         "80": {
             "label": "Application",
@@ -20,7 +20,7 @@
         },
         "8025": {
             "label": "MailHog",
-            "onAutoForward": "notify"
+            "onAutoForward": "ignore"
         },
         "1025": {
             "label": "MailHog SMTP",
@@ -60,24 +60,24 @@
             // Set to false to prevent the database content from persisting between rebuilds.
             "installDatabaseToWorkspaces": true
         },
-        // "./features/wordpress": {
-        //      // WordPress version: Accepts 'latest', 'nightly', or a version number.
-        //     "version": "latest",
-        //     // Set to false to prevent wp-content/uploads content from persisting between rebuilds.
-        //     "moveUploadsToWorkspaces": true,
-        //     // Set to true to create the environment as a WordPress multisite.
-        //     "multisite": false,
-        //     // GitHub Codespaces only supports the subdirectory network type for multisite; subdomain cannot be used.
-        //     "multisiteStyle": "subdirectory",
-        //     "installLanguages": false,
-        //     "installPlugins": true,
-        //     "environment": "plugin",
-        //     "themeTest": true
-        // },
-        // "./features/wp-cli": {
-        //     // Set to true to enable nightly builds of WP-CLI.
-        //     "nightly": false
-        // },
+        "./features/wordpress": {
+             // WordPress version: Accepts 'latest', 'nightly', or a version number.
+            "version": "latest",
+            // Set to false to prevent wp-content/uploads content from persisting between rebuilds.
+            "moveUploadsToWorkspaces": true,
+            // Set to true to create the environment as a WordPress multisite.
+            "multisite": false,
+            // GitHub Codespaces only supports the subdirectory network type for multisite; subdomain cannot be used.
+            "multisiteStyle": "subdirectory",
+            "installLanguages": false,
+            "installPlugins": true,
+            "environment": "plugin",
+            "themeTest": true
+        },
+        "./features/wp-cli": {
+            // Set to true to enable nightly builds of WP-CLI.
+            "nightly": false
+        },
         // "./features/vip-go-mu-plugins": {
         //     // Set to false to disable VIP MU plugins (not recommended).
         //     "enabled": false,
@@ -175,17 +175,13 @@
                 "rangav.vscode-thunder-client"
             ],
             "settings": {
-                // "files.exclude": {
-                //     ".devcontainer/": true,
-                //     "vendor/": true,
-                //     "client-config/": true,
-                //     ".gitignore": true,
-                //     "composer.json": true,
-                //     "composer.lock": true,
-                //     "phpcs.xml": true,
-                //     "README.md": true,
-                //     "digital-picture-frame/includes/libraries/": true
-                // },
+                "files.exclude": {
+                    ".devcontainer/": true,
+                    "vendor/": true,
+                    ".gitignore": true,
+                    "composer.json": true,
+                    "composer.lock": true,
+                },
                 "logViewer.watch": [
                     {
                         "title": "NGINX Error",
