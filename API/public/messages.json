@@ -1,4 +1,5 @@
 {
+    "hello": "Hello, World!",
     "invalid_input": "The provided input is invalid.",
     "users_route" : "Users list route.",
     "users_created" : "User create route",

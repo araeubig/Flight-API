@@ -21,6 +21,10 @@ class ComposerStaticInit8fdb7719b6c75b874bfec753fb04f568
     );
 
     public static $prefixLengthsPsr4 = array (
+        'f' => 
+        array (
+            'flight\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -71,6 +75,10 @@ class ComposerStaticInit8fdb7719b6c75b874bfec753fb04f568
     );
 
     public static $prefixDirsPsr4 = array (
+        'flight\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/flightphp/permissions/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',

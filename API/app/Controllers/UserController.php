@@ -16,6 +16,12 @@ class UserController
 {
     use ApiResponse;
 
+    public function hello()
+    {
+        return $this->success([], getMessage('hello'), 200);
+
+    }
+
     public function index()
     {
         return $this->success(GetAll::execute(), getMessage('users_route'), 200);

@@ -2,7 +2,7 @@
 
 use App\Controllers\UserController;
 
-// Flight::route('GET /', [new UserController(), 'message']);
+Flight::route('GET /', [new UserController(), 'hello']);
 Flight::route('GET /users', [new UserController(), 'index']);
 Flight::route('GET /users/@id', [new UserController(), 'show']);
 Flight::route('POST /users', [new UserController(), 'store']);

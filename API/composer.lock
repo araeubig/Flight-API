@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ffa3cd31501d491c5b036f0aee2419f",
+    "content-hash": "648210181f6da4413fee673a45225066",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -383,6 +383,61 @@
                 "source": "https://github.com/flightphp/core/tree/v3.13.1"
             },
             "time": "2025-01-14T05:58:50+00:00"
+        },
+        {
+            "name": "flightphp/permissions",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flightphp/permissions.git",
+                "reference": "c2f35f5f5149a72a58d7f1b2ba9927abc0146436"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flightphp/permissions/zipball/c2f35f5f5149a72a58d7f1b2ba9927abc0146436",
+                "reference": "c2f35f5f5149a72a58d7f1b2ba9927abc0146436",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "flightphp/core": "^3.10",
+                "phpunit/phpunit": "^9.0",
+                "rregeer/phpunit-coverage-check": "^0.3.1",
+                "squizlabs/php_codesniffer": "^3.8",
+                "wruczek/php-file-cache": "^0.0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "flight\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "n0nag0n",
+                    "email": "n0nag0n@sky-9.com",
+                    "role": "Owner"
+                }
+            ],
+            "description": "Library for managing permissions in Flight Applications",
+            "homepage": "https://docs.flightphp.com",
+            "keywords": [
+                "Authentication",
+                "Simple",
+                "lite",
+                "permissions"
+            ],
+            "support": {
+                "issues": "https://github.com/flightphp/permissions/issues",
+                "source": "https://github.com/flightphp/permissions/tree/v0.1.0"
+            },
+            "time": "2024-06-04T05:24:24+00:00"
         },
         {
             "name": "geekgroveofficial/php-smart-validator",
