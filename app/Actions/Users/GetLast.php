@@ -8,6 +8,6 @@ class GetLast
 {
     public static function execute()
     {
-        return State::getAll();
+        return State::getLast();
     }
 }

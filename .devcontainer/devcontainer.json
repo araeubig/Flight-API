@@ -172,7 +172,8 @@
                 "esbenp.prettier-vscode",
                 "ms-azuretools.vscode-docker",
                 "uctakeoff.vscode-counter",
-                "rangav.vscode-thunder-client"
+                "rangav.vscode-thunder-client",
+                "RapidAPI.vscode-rapidapi-client"
             ],
             "settings": {
                 "files.exclude": {

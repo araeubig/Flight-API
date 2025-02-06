@@ -23,6 +23,15 @@ class State
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function getLast()
+    {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->query("SELECT * FROM data WHERE data_id=(SELECT MAX(data_id) FROM data)");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // SELECT * FROM data WHERE data_id=(SELECT MAX(data_id) FROM data);
+
     public static function getById($id)
     {
         $db = Database::getInstance()->getConnection();

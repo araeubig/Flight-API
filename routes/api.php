@@ -10,7 +10,9 @@
 
 use App\Controllers\StateController;
 
+Flight::route('GET /', [new StateController(), 'hello']);
 Flight::route('GET /state', [new StateController(), 'last']);
+Flight::route('POST /state', [new StateController(), 'store']);
 
 // Flight::route('GET /users', [new StateController(), 'index']);
 // Flight::route('GET /users/@id', [new StateController(), 'show']);
