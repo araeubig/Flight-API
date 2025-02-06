@@ -8,6 +8,8 @@ use App\Actions\Users\Delete;
 use App\Actions\Users\GetAll;
 use App\Actions\Users\Show;
 use App\Actions\Users\Update;
+use App\Actions\Users\GetState;
+
 use App\Traits\ApiResponse;
 use Exception;
 use Flight;
@@ -20,6 +22,11 @@ class UserController
     {
         return $this->success([], getMessage('hello'), 200);
 
+    }
+
+    public function state()
+    {
+        return $this->success(GetState::execute(), getMessage('state_route'), 200);
     }
 
     public function index()

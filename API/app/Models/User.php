@@ -23,6 +23,13 @@ class User
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function getState()
+    {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->query("SELECT * FROM state");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public static function getById($id)
     {
         $db = Database::getInstance()->getConnection();
