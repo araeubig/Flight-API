@@ -60,20 +60,20 @@
             // Set to false to prevent the database content from persisting between rebuilds.
             "installDatabaseToWorkspaces": true
         },
-        "./features/wordpress": {
-             // WordPress version: Accepts 'latest', 'nightly', or a version number.
-            "version": "latest",
-            // Set to false to prevent wp-content/uploads content from persisting between rebuilds.
-            "moveUploadsToWorkspaces": true,
-            // Set to true to create the environment as a WordPress multisite.
-            "multisite": false,
-            // GitHub Codespaces only supports the subdirectory network type for multisite; subdomain cannot be used.
-            "multisiteStyle": "subdirectory",
-            "installLanguages": false,
-            "installPlugins": true,
-            "environment": "plugin",
-            "themeTest": true
-        },
+        // "./features/wordpress": {
+        //      // WordPress version: Accepts 'latest', 'nightly', or a version number.
+        //     "version": "latest",
+        //     // Set to false to prevent wp-content/uploads content from persisting between rebuilds.
+        //     "moveUploadsToWorkspaces": true,
+        //     // Set to true to create the environment as a WordPress multisite.
+        //     "multisite": false,
+        //     // GitHub Codespaces only supports the subdirectory network type for multisite; subdomain cannot be used.
+        //     "multisiteStyle": "subdirectory",
+        //     "installLanguages": false,
+        //     "installPlugins": true,
+        //     "environment": "plugin",
+        //     "themeTest": true
+        // },
         "./features/wp-cli": {
             // Set to true to enable nightly builds of WP-CLI.
             "nightly": false
