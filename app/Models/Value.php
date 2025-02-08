@@ -119,7 +119,34 @@ class Value
 
         $stmt = $db->query("
             SELECT
-                v.s_sc, v.t_r1, g.status_indicator AS w_gh
+                v.s_ts,
+                v.s_pr,
+                v.s_ng,
+                v.s_dg,
+                v.s_cn,
+                v.s_op,
+                v.s_sc,
+                v.t_r0,
+                v.t_r1,
+                v.t_r2,
+                v.t_r4,
+                v.h_r0,
+                v.h_r1,
+                v.h_r2,
+                v.h_r4,
+                v.c_r1,
+                v.c_r2,
+                v.c_r4,
+                v.a_r1,
+                v.a_r2,
+                v.a_r4,
+                v.i_r1,
+                v.i_r2,
+                v.i_r4,
+                v.e_r1,
+                v.e_r2,
+                v.e_r4,
+                g.status_indicator AS w_gh
             FROM
                 data v, github g
             ORDER BY
@@ -144,7 +171,68 @@ class Value
     {
         $db = Database::getInstance()->getConnection();
         //$stmt = $db->prepare("INSERT INTO users (name) VALUES (:name)");
-        $stmt = $db->prepare("INSERT INTO data (s_ts, s_pr, s_ng, s_dg, s_cn, s_op, s_sc, t_r0, t_r1, t_r2, t_r4, h_r0, h_r1, h_r2, h_r4, c_r1, c_r2, c_r4, a_r1, a_r2, a_r4, i_r1, i_r2, i_r4, e_r1, e_r2, e_r4) VALUES (:s_ts, :s_pr, :s_ng, :s_dg, :s_cn, :s_op, :s_sc, :t_r0, :t_r1, :t_r2, :t_r4, :h_r0, :h_r1, :h_r2, :h_r4, :c_r1, :c_r2, :c_r4, :a_r1, :a_r2, :a_r4, :i_r1, :i_r2, :i_r4, :e_r1, :e_r2, :e_r4)");
+        //$stmt = $db->prepare("INSERT INTO data (s_ts, s_pr, s_ng, s_dg, s_cn, s_op, s_sc, t_r0, t_r1, t_r2, t_r4, h_r0, h_r1, h_r2, h_r4, c_r1, c_r2, c_r4, a_r1, a_r2, a_r4, i_r1, i_r2, i_r4, e_r1, e_r2, e_r4) VALUES (:s_ts, :s_pr, :s_ng, :s_dg, :s_cn, :s_op, :s_sc, :t_r0, :t_r1, :t_r2, :t_r4, :h_r0, :h_r1, :h_r2, :h_r4, :c_r1, :c_r2, :c_r4, :a_r1, :a_r2, :a_r4, :i_r1, :i_r2, :i_r4, :e_r1, :e_r2, :e_r4)");
+        $stmt = $db->prepare("
+            INSERT INTO data (
+                s_ts,
+                s_pr,
+                s_ng,
+                s_dg,
+                s_cn,
+                s_op,
+                s_sc,
+                t_r0,
+                t_r1,
+                t_r2,
+                t_r4,
+                h_r0,
+                h_r1,
+                h_r2,
+                h_r4,
+                c_r1,
+                c_r2,
+                c_r4,
+                a_r1,
+                a_r2,
+                a_r4,
+                i_r1,
+                i_r2,
+                i_r4,
+                e_r1,
+                e_r2,
+                e_r4
+            ) VALUES (
+                :s_ts,
+                :s_pr,
+                :s_ng,
+                :s_dg,
+                :s_cn,
+                :s_op,
+                :s_sc,
+                :t_r0,
+                :t_r1,
+                :t_r2,
+                :t_r4,
+                :h_r0,
+                :h_r1,
+                :h_r2,
+                :h_r4,
+                :c_r1,
+                :c_r2,
+                :c_r4,
+                :a_r1,
+                :a_r2,
+                :a_r4,
+                :i_r1,
+                :i_r2,
+                :i_r4,
+                :e_r1,
+                :e_r2,
+                :e_r4
+            )
+        ");
+
+        
         $stmt->bindParam(':s_ts', $this->s_ts);
         $stmt->bindParam(':s_pr', $this->s_pr);
         $stmt->bindParam(':s_ng', $this->s_ng);

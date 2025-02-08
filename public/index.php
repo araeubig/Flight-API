@@ -1,16 +1,16 @@
 <?php
 require '../vendor/autoload.php';
-
+require '../middleware/authentication.php';
 require '../routes/api.php';
 
-use OpenApi\Attributes as OA;
-use Tracy\Debugger;
-use flight\debug\tracy\TracyExtensionLoader;
+// use OpenApi\Attributes as OA;
+// use Tracy\Debugger;
+// use flight\debug\tracy\TracyExtensionLoader;
 
-Debugger::enable();
-Debugger::$logDirectory = __DIR__ . '/../logs/';
-Debugger::$strictMode = true; // alle Fehler anzeigen
-// Debugger::$strictMode = E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED; // alle Fehler außer veralteten Hinweisen
+// Debugger::enable();
+// Debugger::$logDirectory = __DIR__ . '/../logs/';
+// Debugger::$strictMode = true; // alle Fehler anzeigen
+// // Debugger::$strictMode = E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED; // alle Fehler außer veralteten Hinweisen
 // if (Debugger::$showBar) {
 //     $app->set('flight.content_length', false); // Wenn die Debugger-Leiste sichtbar ist, kann die Inhaltslänge nicht von Flight festgelegt werden
 
@@ -18,6 +18,6 @@ Debugger::$strictMode = true; // alle Fehler anzeigen
 //     // Andernfalls kommentieren Sie dies aus.
 //     new TracyExtensionLoader($app);
 // }
-Flight::set('flight.log_errors', true);
+// Flight::set('flight.log_errors', true);
 
 Flight::start();
