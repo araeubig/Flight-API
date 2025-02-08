@@ -98,11 +98,36 @@ class Value
     }
 
 
+    // public static function getLast()
+    // {
+    //     $db = Database::getInstance()->getConnection();
+    //     //$stmt = $db->query("SELECT id,name FROM users");
+    //     $stmt = $db->query("SELECT * FROM data ORDER BY id DESC LIMIT 1");
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
+
     public static function getLast()
     {
         $db = Database::getInstance()->getConnection();
         //$stmt = $db->query("SELECT id,name FROM users");
-        $stmt = $db->query("SELECT * FROM data ORDER BY id DESC LIMIT 1");
+        //$stmt = $db->query("SELECT * FROM data ORDER BY id DESC LIMIT 1");
+        //$stmt = $db->query("SELECT * FROM data ORDER BY id DESC LIMIT 1");
+
+        //$stmt = $db->query("SELECT c.customer_name, o.order_id FROM customers c INNER JOIN orders o ON o.customer_id = c.id ORDER BY o.id desc LIMIT 1");
+
+        //$stmt = $db->query("SELECT v.s_sc, v.t_r1 FROM data v JOIN github g ORDER BY v.id desc LIMIT 1");
+
+        $stmt = $db->query("
+            SELECT
+                v.s_sc, v.t_r1, g.status_indicator AS w_gh
+            FROM
+                data v, github g
+            ORDER BY
+                v.id, g.id DESC LIMIT 1
+        ");
+
+
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

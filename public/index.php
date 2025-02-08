@@ -3,6 +3,7 @@ require '../vendor/autoload.php';
 
 require '../routes/api.php';
 
+use OpenApi\Attributes as OA;
 use Tracy\Debugger;
 use flight\debug\tracy\TracyExtensionLoader;
 

@@ -14,14 +14,20 @@ class ValueController
 {
     use ApiResponse;
 
+    public function documentation()
+    {
+        Flight::set('flight.views.path', './../docs');
+        Flight::render('index', [ ]);
+    }
+
     public function last()
     {
-        return $this->success(GetLast::execute(), getMessage('users_route'), 200);
+        return $this->success(GetLast::execute(), getMessage('values_route'), 200);
     }
 
     public function open()
     {
-        return $this->success(OpenState::execute(), getMessage('users_route'), 200);
+        return $this->success(OpenState::execute(), getMessage('openstate_route'), 200);
     }
 
     public function store()

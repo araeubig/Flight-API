@@ -10,6 +10,7 @@ use App\Controllers\ValueController;
 // Flight::route('DELETE /users/@id', [new UserController(), 'delete']);
 
 
+Flight::route('GET /', [new ValueController(), 'documentation']);
 Flight::route('GET /values', [new ValueController(), 'last']);
 Flight::route('GET /openstate', [new ValueController(), 'open']);
 Flight::route('POST /values', [new ValueController(), 'store']);
