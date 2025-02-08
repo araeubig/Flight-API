@@ -6,13 +6,7 @@ class RequiredRule implements ValidationRuleInterface
 {
     public function validate(string $field, mixed $value, mixed $parameter = null): bool
     {
-        // return ! empty($value);
-        if ( !isset($value) ) {
-            return false;
-        }
-
-        return true;
-
+        return ! empty($value);
     }
 
     public function getErrorMessage(string $field, mixed $parameter = null): string

@@ -36,7 +36,7 @@ class ValueController
 
         $validator = new Validator($request, [
             's_ts' => ['required','string'],
-            's_pr' => ['bool'],
+            's_pr' => ['required','bool'],
             's_ng' => ['bool'],
             's_dg' => ['bool'],
             's_cn' => ['integer'],
