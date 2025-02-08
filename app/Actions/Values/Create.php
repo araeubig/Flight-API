@@ -41,7 +41,7 @@ class Create
                 $data['e_r4'],
             );
             $user->save();
-            return ["message" => getMessage('users_created'), "status" => true];
+            return ["message" => getMessage('values_created'), "status" => true];
         } catch (Exception $exception) {
             throw $exception;
         }

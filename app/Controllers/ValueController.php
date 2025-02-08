@@ -45,7 +45,7 @@ class ValueController
             $result = Create::execute($request);
             return $this->success([], $result['message'], 201);
         } catch (Exception $exception) {
-            return $this->failed([], getMessage('users_not_created'));
+            return $this->failed([], getMessage('values_not_created'));
         }
     }
 

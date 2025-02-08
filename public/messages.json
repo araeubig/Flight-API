@@ -8,5 +8,7 @@
     "users_deleted" : "User successfully deleted",
     "users_not_deleted" : "User not deleted",
     "users_not_found" : "User not found",
-    "users_found" : "User successfully resulted"
+    "users_found" : "User successfully resulted",
+    "values_not_created" : "Values not created.",
+    "values_created" : "Values created."
 }
